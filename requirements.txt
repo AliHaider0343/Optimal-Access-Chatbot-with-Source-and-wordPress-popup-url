@@ -7,5 +7,5 @@ streamlit
 langchain
 langchain_google_genai
 chromadb==0.4.22
-sqlite-utils
+--upgrade sqlite3
 
