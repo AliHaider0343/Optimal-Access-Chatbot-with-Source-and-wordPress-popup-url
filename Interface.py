@@ -76,7 +76,7 @@ def create_chatbot():
                         # Get the absolute path of the current directory
                     current_dir = os.path.dirname(__file__)
                     script_path = os.path.join(current_dir, "Data-Ingestion-and-Sync.py")
-
+                    st.write(script_path)
                     command = [Python, script_path, user_input,wordPress_links_input, username, chatbot_name, str(sync_period)]
                     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
                     return process
