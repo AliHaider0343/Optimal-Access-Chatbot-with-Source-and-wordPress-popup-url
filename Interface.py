@@ -9,6 +9,7 @@ import streamlit as st
 import pandas as pd
 import multiprocessing
 from ChatChain import *
+import sqlite
 
 Avaiable_Models=['gemini-pro','gpt-3.5-turbo-1106','gpt-3.5-turbo','gpt-3.5-turbo-instruct','gpt-4','gpt-4-0613']#,'gpt-4-32k-0613','gpt-4-32k']
 def home():
