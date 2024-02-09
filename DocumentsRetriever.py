@@ -2,7 +2,7 @@ from langchain_openai import OpenAIEmbeddings
 import os
 from langchain_community.document_transformers import (LongContextReorder, )
 from langchain_community.vectorstores import Chroma
-os.environ['OPENAI_API_KEY']="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"
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 import pandas as pd
 
 def retrive_context(query, user_id, chatbot_ID, meta_data=None):
