@@ -12,7 +12,7 @@ from ChatChain import *
 
 Avaiable_Models=['gemini-pro','gpt-3.5-turbo-1106','gpt-3.5-turbo','gpt-3.5-turbo-instruct','gpt-4','gpt-4-0613']#,'gpt-4-32k-0613','gpt-4-32k']
 def home():
-        # Get the absolute path of the current directory
+    st.write(sqlite3.sqlite_version)
     current_dir = os.path.dirname(__file__)
     # Concatenate the current directory path with the relative path to your image
     image_path = os.path.join(current_dir, "Images", "Logo-Curation-right.png")
