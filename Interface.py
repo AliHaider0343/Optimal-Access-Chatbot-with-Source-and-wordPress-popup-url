@@ -186,8 +186,9 @@ def retrieve_information():
                 # Create a multiprocessing Pool with a single worker
 
                 print(query, st.session_state.user_id, st.session_state.chatbot_id, None)
-                with multiprocessing.Pool(processes=1) as pool:
-                    result = pool.apply(retrive_context, args=(query, st.session_state.user_id, st.session_state.chatbot_id, None))
+                result = retrive_context(query, st.session_state.user_id, st.session_state.chatbot_id, None)
+                # with multiprocessing.Pool(processes=1) as pool:
+                #     result = pool.apply(retrive_context, args=(query, st.session_state.user_id, st.session_state.chatbot_id, None))
                 for context in result:
                     st.write(context)
                     st.markdown('---')
