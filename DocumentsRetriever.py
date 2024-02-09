@@ -6,7 +6,12 @@ os.environ['OPENAI_API_KEY']="sk-FPVOTJfRLMVOno9B4upNT3BlbkFJY2UGeLoe4vie2UJwVDS
 import pandas as pd
 
 def retrive_context(query, user_id, chatbot_ID, meta_data=None):
-    chroma_db = Chroma(persist_directory=f"./{user_id}-{chatbot_ID}-chroma_db", embedding_function=OpenAIEmbeddings())
+    # Get the absolute path to the current directory
+    current_directory = os.getcwd()
+    
+    # Specify the persist directory using the absolute path
+    persist_directory = os.path.join(current_directory, f"{user_id}-{chatbot_ID}-chroma_db")
+    chroma_db = Chroma(persist_directory=persist_directory, embedding_function=OpenAIEmbeddings())
     retriever = chroma_db.as_retriever(search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.6})
     docs = retriever.get_relevant_documents(query)
     contexts = []
