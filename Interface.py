@@ -223,7 +223,7 @@ def main():
     current_dir = os.path.dirname(__file__)
     
     # Concatenate the current directory path with the relative path to your image
-    image_path = os.path.join(current_dir, "Images", "Logo-left.png")
+    image_path = os.path.join(current_dir, "Images", "Logo-Left.png")
     st.sidebar.image(image_path, caption="Optimal Access Conversational Solution",width=300)
 
     st.sidebar.title("Optimal Access")
