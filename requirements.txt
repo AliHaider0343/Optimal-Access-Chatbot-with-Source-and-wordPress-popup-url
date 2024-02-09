@@ -5,3 +5,4 @@ langchain_community
 langchain_core
 streamlit
 langchain
+langchain_google_genai
