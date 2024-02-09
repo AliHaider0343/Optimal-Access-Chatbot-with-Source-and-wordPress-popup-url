@@ -18,7 +18,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 import os
 import openai
 import streamlit as st
-os.environ['OPENAI_API_KEY']="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"
+os.environ['OPENAI_API_KEY']="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"
 os.environ['GOOGLE_API_KEY'] = 'AIzaSyAJjb0Koe8IdFWQB8jwaVTrwelav20wkMY'
 
 embedding_function = OpenAIEmbeddings()
