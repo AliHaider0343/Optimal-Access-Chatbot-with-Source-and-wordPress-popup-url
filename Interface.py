@@ -3,13 +3,10 @@ import subprocess
 import sys
 import threading
 import time
-
 from langchain_community.vectorstores.chroma import Chroma
-
 from DocumentsRetriever import retrive_context
 import streamlit as st
 import pandas as pd
-# Function to create the Home page
 import multiprocessing
 from ChatChain import *
 
@@ -19,7 +16,6 @@ def home():
     current_dir = os.path.dirname(__file__)
     # Concatenate the current directory path with the relative path to your image
     image_path = os.path.join(current_dir, "Images", "Logo-Curation-right.png")
-    st.write(image_path)
     st.image(image_path, caption="Dynamic Knowledge base powered Conversational Solution", width=400)
 
     description = """
@@ -77,8 +73,7 @@ def create_chatbot():
                         # Get the absolute path of the current directory
                     current_dir = os.path.dirname(__file__)
                     script_path = os.path.join(current_dir, "Data-Ingestion-and-Sync.py")
-                    st.write(script_path)
-                    command = [Python, script_path, user_input,wordPress_links_input, username, chatbot_name, str(sync_period)]
+                    command = [f"{sys.executable}", script_path, user_input,wordPress_links_input, username, chatbot_name, str(sync_period)]
                     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
                     return process
                 # Start the subprocess in a separate thread
