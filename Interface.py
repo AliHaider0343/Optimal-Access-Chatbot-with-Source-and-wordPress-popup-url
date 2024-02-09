@@ -15,8 +15,6 @@ sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import sqlite3
 Avaiable_Models=['gemini-pro','gpt-3.5-turbo-1106','gpt-3.5-turbo','gpt-3.5-turbo-instruct','gpt-4','gpt-4-0613']#,'gpt-4-32k-0613','gpt-4-32k']
 def home():
-    st.write(sqlite3.sqlite_version)
-    st.write(sys.version)
     current_dir = os.path.dirname(__file__)
     # Concatenate the current directory path with the relative path to your image
     image_path = os.path.join(current_dir, "Images", "Logo-Curation-right.png")
