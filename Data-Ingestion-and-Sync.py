@@ -16,7 +16,7 @@ from langchain_core.documents import Document
 from datetime import datetime
 import numpy as np
 import streamlit as st
-os.environ['OPENAI_API_KEY']="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"
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 source_column = "KuratedContent_sourceUrl"
 metadata_columns = ['Channel_about', 'Channel_keywords', 'Collection_about', 'Collection_keywords', 'File_about',
                     'File_keywords', 'KuratedContent_author', 'KuratedContent_datePublished',
