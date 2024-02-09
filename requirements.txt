@@ -6,4 +6,5 @@ langchain_core
 streamlit
 langchain
 langchain_google_genai
-chromadb
+chromadb==0.4.22
+sqlite
