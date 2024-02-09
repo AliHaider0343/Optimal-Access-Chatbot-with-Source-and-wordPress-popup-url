@@ -19,6 +19,7 @@ def home():
     current_dir = os.path.dirname(__file__)
     # Concatenate the current directory path with the relative path to your image
     image_path = os.path.join(current_dir, "Images", "Logo-Curation-right.png")
+    st.write(image_path)
     st.image(image_path, caption="Dynamic Knowledge base powered Conversational Solution", width=400)
 
     description = """
