@@ -73,7 +73,11 @@ def create_chatbot():
                 if 'status' in st.session_state:
                     del st.session_state.status
                 def run_subprocess(user_input,wordPress_links_input, username, chatbot_name, sync_period):
-                    command = [Python, "Data-Ingestion-and-Sync.py", user_input,wordPress_links_input, username, chatbot_name, str(sync_period)]
+                        # Get the absolute path of the current directory
+                    current_dir = os.path.dirname(__file__)
+                    script_path = os.path.join(current_dir, "Data-Ingestion-and-Sync.py")
+
+                    command = [Python, script_path, user_input,wordPress_links_input, username, chatbot_name, str(sync_period)]
                     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
                     return process
                 # Start the subprocess in a separate thread
