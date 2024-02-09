@@ -4,6 +4,7 @@ from langchain_community.document_transformers import (LongContextReorder, )
 from langchain_community.vectorstores import Chroma
 import streamlit as st
 import pandas as pd
+
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 def retrive_context(query, user_id, chatbot_ID, meta_data=None):
     # Get the absolute path to the current directory
