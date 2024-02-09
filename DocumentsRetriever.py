@@ -2,9 +2,9 @@ from langchain_openai import OpenAIEmbeddings
 import os
 from langchain_community.document_transformers import (LongContextReorder, )
 from langchain_community.vectorstores import Chroma
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+import streamlit as st
 import pandas as pd
-
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 def retrive_context(query, user_id, chatbot_ID, meta_data=None):
     # Get the absolute path to the current directory
     current_directory = os.getcwd()
