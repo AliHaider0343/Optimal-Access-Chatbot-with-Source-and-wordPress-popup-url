@@ -139,7 +139,13 @@ def create_chain(llm: BaseLanguageModel,retriever: BaseRetriever,) -> Runnable:
         )
 
 def Get_Conversation_chain(user_id,chatbot_id,query,chat_history,model="gpt-4"):
-    chroma_db = Chroma(persist_directory=f"./{user_id}-{chatbot_id}-chroma_db", embedding_function=OpenAIEmbeddings())
+  # Get the absolute path to the current directory
+    current_directory = os.getcwd()
+
+  # Specify the persist directory using the absolute path
+    persist_directory = os.path.join(current_directory, f"{user_id}-{chatbot_id}-chroma_db")
+
+    chroma_db = Chroma(persist_directory=persist_directory, embedding_function=OpenAIEmbeddings())
     #retriever = chroma_db.as_retriever(search_kwargs=dict(k=3))
     retriever = chroma_db.as_retriever(search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.7})
 
