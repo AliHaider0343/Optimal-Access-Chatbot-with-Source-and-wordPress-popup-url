@@ -228,7 +228,12 @@ def Main_Runner_for_Single_user(Urls_for_chatbot,urls_corresponding_wordPress_we
         processed_data = Collect_Process_Data(parsed_data_against_urls)
         # here check if we have to create new vector store or we might have to update preious
         if check_vector_store_exists(str(f"{user_id}-{chatbot_id}-chroma_db")):
-            chroma_db = Chroma(persist_directory=f"./{user_id}-{chatbot_id}-chroma_db",
+            # Get the absolute path to the current directory
+            current_directory = os.getcwd()
+            # Specify the persist directory using the absolute path
+            persist_directory = os.path.join(current_directory, f"{user_id}-{chatbot_id}-chroma_db")
+    
+            chroma_db = Chroma(persist_directory=persist_directory,
                                embedding_function=OpenAIEmbeddings())
             documents = chroma_db.get()
             unique_dates = set()
@@ -251,8 +256,11 @@ def Main_Runner_for_Single_user(Urls_for_chatbot,urls_corresponding_wordPress_we
         else:
             documents = Generate_documents_from_dataframe(processed_data)
             texts = text_splitter.split_documents(documents)
+            current_directory = os.getcwd()
+            # Specify the persist directory using the absolute path
+            persist_directory = os.path.join(current_directory, f"{user_id}-{chatbot_id}-chroma_db")
             chroma_db = Chroma.from_documents(documents=texts, embedding=OpenAIEmbeddings(),
-                                              persist_directory=f"./{user_id}-{chatbot_id}-chroma_db")
+                                              persist_directory=persist_directory)
             print('\nVector Store has been Created SUccessfully (Base store)')
 
         if Sync_period is None:
