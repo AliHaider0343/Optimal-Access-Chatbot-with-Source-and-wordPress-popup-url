@@ -15,7 +15,7 @@ def retrive_context(query, user_id, chatbot_ID, meta_data=None):
     retriever = chroma_db.as_retriever(search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.6})
     docs = retriever.get_relevant_documents(query)
     contexts = []
-    context.append(os.listdir())
+    contexts.append(os.listdir())
 
     for document in docs:
         context = {'Context-Information': document.page_content,
