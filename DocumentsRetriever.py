@@ -9,15 +9,18 @@ os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 def get_size_and_item(path):
     # If it's a file, return its size and "file"
     if os.path.isfile(path):
-        return os.path.getsize(path), "file"
+        size_bytes = os.path.getsize(path)
+        size_mb = size_bytes / (1024 * 1024)  # Convert bytes to megabytes
+        return size_mb, "file"
     # If it's a directory, sum up the sizes of all files in the directory recursively and return "directory"
     elif os.path.isdir(path):
-        total_size = 0
+        total_size_bytes = 0
         for root, dirs, files in os.walk(path):
             for f in files:
                 file_path = os.path.join(root, f)
-                total_size += os.path.getsize(file_path)
-        return total_size, "directory"
+                total_size_bytes += os.path.getsize(file_path)
+        total_size_mb = total_size_bytes / (1024 * 1024)  # Convert bytes to megabytes
+        return total_size_mb, "directory"
     else:
         return 0, None
 
@@ -35,6 +38,7 @@ def list_contents_with_size():
         result_dict[item] = (size, item_type)
 
     return result_dict
+
     
 def retrive_context(query, user_id, chatbot_ID, meta_data=None):
     # Get the absolute path to the current directory
