@@ -137,8 +137,8 @@ def chat_interface():
     st.title("Chat with Your Dynamic Bot")
     st.markdown("---")
     if 'user_id' and 'chatbot_id' not in st.session_state:
-        st.session_state.user_id = None
-        st.session_state.chatbot_id = None
+        st.session_state.user_id = "Karan-Bovandi"#None
+        st.session_state.chatbot_id ="Chatbot"#None
 
     if st.session_state.user_id and st.session_state.chatbot_id:
         if 'status' in st.session_state:
@@ -169,8 +169,9 @@ def retrieve_information():
     st.write("Retrieve information from your chatbot here.")
     st.markdown("---")
     if 'user_id' and 'chatbot_id' not in st.session_state:
-        st.session_state.user_id = None
-        st.session_state.chatbot_id = None
+        st.session_state.user_id = "Karan-Bovandi"#None
+        st.session_state.chatbot_id ="Chatbot"#None
+        
 
     if st.session_state.user_id and st.session_state.chatbot_id:
         if 'status' in st.session_state:
@@ -218,7 +219,7 @@ document.body.style.zoom = 0.8;
 def main():
     pages = {
         "Home": home,
-        "Create and Configure Chatbot": create_chatbot,
+        #"Create and Configure Chatbot": create_chatbot,
         "Retrieve Information": retrieve_information,
         "Chat Interface":chat_interface,
     }
