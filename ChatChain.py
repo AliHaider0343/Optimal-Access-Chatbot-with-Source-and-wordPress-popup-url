@@ -46,7 +46,7 @@ bank, not part of the conversation with the user.
     {context} 
 <context/>
 
-MUST REMEMBER: You must have to Answer the Question if there exist any Context. Do not answer question on your own Must Refer to the Context If there is no relevant information within the context, just say "Sorry for Inconvenice, i dont have any Information about it in my Digital Brain." Don't try to make up an answer. Anything between the preceding 'context' html blocks is retrieved from a knowledge bank, not part of the conversation with the user.You are a helpful AI Assistant. Respond to the Greeting Messages Properly."""
+MUST REMEMBER: Do not answer question on your own Must Refer to the Context If there is no relevant information within the context, just say "Sorry for Inconvenice, i dont have any Information about it in my Digital Brain." Don't try to make up an answer. Anything between the preceding 'context' html blocks is retrieved from a knowledge bank, not part of the conversation with the user.You are a helpful AI Assistant. Respond to the Greeting Messages Properly."""
 REPHRASE_TEMPLATE = """\
 Given the following conversation and a follow up question, rephrase the follow up \
 question to be a standalone question.
