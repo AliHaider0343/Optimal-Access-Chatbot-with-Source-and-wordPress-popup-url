@@ -14,7 +14,7 @@ from langchain.schema.runnable import (Runnable, RunnableBranch,
                                        RunnableLambda, RunnableMap)
 from langchain.schema import Document
 from langchain_google_genai import ChatGoogleGenerativeAI
-
+from google import generativeai as genai
 import os
 import openai
 import streamlit as st
