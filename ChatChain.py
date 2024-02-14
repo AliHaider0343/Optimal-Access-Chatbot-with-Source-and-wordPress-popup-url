@@ -32,7 +32,9 @@ repeat text. Cite search results using [${{number}}] notation. Only cite the mos
 relevant results that answer the question accurately. Place these citations at the end \
 of the sentence or paragraph that reference them - do not put them all at the end. If \
 different results refer to different entities within the same name, write separate \
-answers for each entity. if context involves the Video Transcript then Cite the specific Time period from Context to the Most Relevant Chunk.
+answers for each entity.
+
+Attach the Time period of the Trasncript where they apply in the Responce if context have the Time period Tags.
 
 You should use bullet points in your answer for readability. Put citations where they apply
 rather than putting them all at the end.
