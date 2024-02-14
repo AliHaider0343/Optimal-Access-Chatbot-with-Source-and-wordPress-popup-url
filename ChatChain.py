@@ -162,7 +162,7 @@ def Get_Conversation_chain(user_id,chatbot_id,query,chat_history,model="gpt-4"):
     else:
         llm = ChatOpenAI(
         model=model,
-        streaming=False,
+        streaming=True,
         temperature=0,)
 
     answer_chain = create_chain(
