@@ -148,6 +148,9 @@ def Get_Conversation_chain(user_id,chatbot_id,query,chat_history,model="gpt-4"):
     chroma_db = Chroma(persist_directory=persist_directory, embedding_function=OpenAIEmbeddings())
     #retriever = chroma_db.as_retriever(search_kwargs=dict(k=3))
     retriever = chroma_db.as_retriever(search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.7})
+    if model=='gpt-3.5-turbo':
+          retriever = chroma_db.as_retriever(search_kwargs={"k": 2})
+    
     safety_settings_NONE=[
         { "category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE" },
         { "category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE" },
