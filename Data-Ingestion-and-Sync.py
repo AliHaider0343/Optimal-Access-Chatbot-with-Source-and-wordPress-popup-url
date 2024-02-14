@@ -113,7 +113,7 @@ def clean_text(text):
 
 def clean_wordpress_Link(channel_name,collection_name,articals_headline):
     channel_name=channel_name.replace(' ', '-')
-    collection_name=collection_name.replace(' ', '-')
+    collection_name=collection_name.replace(' ', '-').lower()
     articals_headline=clean_text(articals_headline.replace(' ', '-').lower())
 
     return '/' +channel_name + '/' + collection_name+ '/'+articals_headline
