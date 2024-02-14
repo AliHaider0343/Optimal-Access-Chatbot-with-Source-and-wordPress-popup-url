@@ -28,7 +28,7 @@ Generate a comprehensive and informative answer of 80 words or less for the \
 given question based solely on the provided search results (URL and content). You must \
 only use information from the provided search results. Use an unbiased and \
 journalistic tone. Combine search results together into a coherent answer. Do not \
-repeat text. Cite search results using [${{number}}] and [${{Time Period}}] notation. Only cite the most \
+repeat text. Cite search results using [${{number}}] and [${{Specific-Time-Spot-in-Video}}] notation. Only cite the most \
 relevant results that answer the question accurately. Place these citations at the end \
 of the sentence or paragraph that reference them - do not put them all at the end. If \
 different results refer to different entities within the same name, write separate \
