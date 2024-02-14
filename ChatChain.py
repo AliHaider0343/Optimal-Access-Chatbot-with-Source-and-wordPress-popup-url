@@ -86,7 +86,7 @@ def format_docs(docs: Sequence[Document]) -> str:
     for i, doc in enumerate(docs):
         refrence_docuemnts_sources.append({'Context-Information': doc.page_content,
                    'Source Link': doc.metadata['KuratedContent_sourceUrl'],
-                    'Word Press Popup Link': str(doc.metadata['KuratedContent_WordpressPopupUrl'])
+                    'Word Press Popup Link': str(doc.metadata['KuratedContent_WordpressPopupUrl']).lower()
                                            })
         doc_string = f"<doc id='{i}'>{doc.page_content}</doc>"
         formatted_docs.append(doc_string)
