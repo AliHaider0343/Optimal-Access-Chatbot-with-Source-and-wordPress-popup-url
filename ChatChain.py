@@ -163,7 +163,7 @@ def Get_Conversation_chain(user_id,chatbot_id,query,chat_history,model="gpt-4"):
         llm = ChatOpenAI(
         model=model,
         streaming=True,
-        temperature=0,  max_tokens=-1)
+        temperature=0)
 
     answer_chain = create_chain(
         llm,
