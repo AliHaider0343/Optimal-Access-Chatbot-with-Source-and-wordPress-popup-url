@@ -18,7 +18,7 @@ def retrive_context(query, user_id, chatbot_ID, meta_data=None):
     for document in docs:
         context = {'Context-Information': document.page_content,
                    'Source Link': document.metadata['KuratedContent_sourceUrl'],
-                   'WordPress Popup Link': document.metadata['KuratedContent_WordpressPopupUrl']
+                   'WordPress Popup Link': str(document.metadata['KuratedContent_WordpressPopupUrl']).lower()
                    }
         contexts.append(context)
     return contexts
